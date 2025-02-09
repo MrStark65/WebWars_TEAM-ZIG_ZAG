@@ -1,0 +1,389 @@
+/* src/components/Navbar.css */
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #0d47a1;
+    --accent-color: #f50057;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --background-light: #f8f9fa;
+    --transition: all 0.3s ease;
+  }
+  
+  .header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: white;
+  }
+  
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* Top Bar */
+  .top-bar {
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: 500;
+  }
+  
+  /* Partners Bar */
+  .partners-bar {
+    background: var(--background-light);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  .partners-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .partner-logo img {
+    height: 40px;
+    width: auto;
+    
+    transition: var(--transition);
+  }
+  
+  .partner-logo:hover img {
+    filter: grayscale(0%);
+    transform: translateY(-2px);
+  }
+  
+  /* Main Navigation */
+  .main-nav {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+  }
+  
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--text-dark);
+  }
+  
+  .brand img {
+    height: 60px;
+    width: auto;
+  }
+  
+  .brand-info h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+  }
+  
+  .brand-info span {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+  }
+  
+  .nav-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-menu a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+    border-radius: 4px;
+  }
+  
+  .nav-menu a:hover {
+    color: var(--primary-color);
+    background: rgba(26, 35, 126, 0.1);
+  }
+  
+  .nav-actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  .btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  
+  .btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--text-light);
+  }
+  
+  .btn-primary {
+    background: var(--accent-color);
+    color: var(--text-light);
+  }
+  
+  .btn-primary:hover {
+    background: #d50000;
+    transform: translateY(-2px);
+  }
+  
+  /* Conference Bar */
+  .conference-bar {
+    background: var(--background-light);
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .conference-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .detail i {
+    color: var(--primary-color);
+  }
+  
+  .conference-badges {
+    display: flex;
+    gap: 0.8rem;
+  }
+  
+  .badge {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+  
+  /* Menu Toggle */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+  }
+  
+  /* Fixed Header */
+  .header.fixed .top-bar,
+  .header.fixed .partners-bar {
+    display: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .nav-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  
+    .nav-content.active {
+      display: block;
+    }
+  
+    .nav-menu {
+      flex-direction: column;
+    }
+  
+    .nav-actions {
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+  
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+  
+    .partners-scroll {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .conference-details {
+      flex-direction: column;
+      gap: 5rem;
+      text-align: center;
+    }
+  
+    .conference-badges {
+      justify-content: center;
+    }
+  
+    .brand-info h1 {
+      font-size: 1.5rem;
+    }
+  
+    .brand-info span {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .nav-content.active {
+    animation: slideDown 0.3s ease forwards;
+  }
+  /* Add these animations to your existing Navbar.css */
+
+/* Partner Logos Continuous Scroll Animation */
+.partners-scroll {
+  animation: scrollPartners 30s linear infinite;
+  /* Keep existing styles */
+}
+
+@keyframes scrollPartners {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Top Bar Alert Animation */
+.top-bar .deadline-alert {
+  animation: slideAlert 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes slideAlert {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Badge Shine Effect */
+.badge {
+  position: relative;
+  overflow: hidden;
+  /* Keep existing styles */
+}
+
+.badge::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* National Flag Colors Strip */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    #FF9933 33.33%,
+    #FFFFFF 33.33%, #FFFFFF 66.66%,
+    #138808 66.66%
+  );
+}
+
+/* Pulsing Effect for Important Buttons */
+.btn-primary {
+  animation: pulse 2s infinite;
+  /* Keep existing styles */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+@keyframes rotateSeam {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add this to your existing navbar component */

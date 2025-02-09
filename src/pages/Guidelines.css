@@ -1,0 +1,405 @@
+/* src/pages/Guidelines.css */
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #ffd700;
+    --accent-color: #ff9800;
+    --text-color: #333;
+    --light-bg: #f5f7fa;
+    --warning-color: #f44336;
+    --success-color: #4caf50;
+    --navbar-height: 80px; /* Adjust this value to match your navbar height */
+  }
+  
+  .guidelines-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--light-bg);
+    min-height: 100vh;
+    /* Add padding-top to account for fixed navbar */
+    padding-top: calc(var(--navbar-height) + 2rem);
+    position: relative;
+  }
+  
+  .gov-header {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #283593 100%);
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gov-logo {
+    margin-bottom: 1rem;
+  }
+  
+  .gov-logo img {
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+  
+  .header-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  }
+  
+  .guideline-section {
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    position: relative;
+  }
+  
+  .section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+  }
+  
+  .section-icon {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .guideline-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .guideline-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .emphasis-text {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .spec-item {
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    border-left: 3px solid var(--secondary-color);
+    transition: transform 0.3s ease;
+  }
+  
+  .spec-item:hover {
+    transform: translateX(5px);
+  }
+  
+  .charges-table {
+    margin-top: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .charge-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .charge-row:hover {
+    background-color: var(--light-bg);
+  }
+  
+  .charge-row:last-child {
+    border-bottom: none;
+  }
+  
+  .instruction-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .instruction-list li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    position: relative;
+    padding-left: 2rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .instruction-list li:hover {
+    transform: translateX(5px);
+    background-color: #e8eaf6;
+  }
+  
+  .instruction-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .publication-process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .process-step {
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    border-bottom: 3px solid var(--secondary-color);
+    transition: transform 0.3s ease;
+  }
+  
+  .process-step:hover {
+    transform: translateY(-5px);
+  }
+  
+  .download-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background: #283593;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Sticky Section Headers */
+  .section-header {
+    background: var(--light-bg);
+    position: sticky;
+    top: var(--navbar-height);
+    z-index: 10;
+    padding: 1rem 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .guidelines-container {
+      padding: 1rem;
+      padding-top: calc(var(--navbar-height) + 1rem);
+    }
+  
+    .gov-header {
+      padding: 2rem 1rem;
+    }
+  
+    .spec-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .publication-process {
+      grid-template-columns: 1fr;
+    }
+  
+    .guideline-card {
+      padding: 1.5rem;
+    }
+  
+    .process-step {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    .guidelines-container {
+      padding: 0;
+      margin: 0;
+    }
+  
+    .guideline-card {
+      box-shadow: none;
+      border: 1px solid #ddd;
+    }
+  
+    .download-btn {
+      display: none;
+    }
+  
+    .section-header {
+      position: relative;
+      top: 0;
+    }
+  }
+  
+  /* Animations */
+  @keyframes slideIn {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .guideline-card,
+    .spec-item,
+    .process-step,
+    .instruction-list li {
+      transition: none;
+    }
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    :root {
+      --primary-color: #000080;
+      --secondary-color: #FFD700;
+      --accent-color: #FF4500;
+    }
+  }
+
+  /* src/pages/Guidelines.css */
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #ffd700;
+    --accent-color: #ff9800;
+    --text-color: #333;
+    --light-bg: #f5f7fa;
+    --warning-color: #f44336;
+    --success-color: #4caf50;
+    --navbar-height: 80px;
+    --top-spacing: 250px; /* New variable for top spacing */
+}
+
+.guidelines-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--light-bg);
+    min-height: 100vh;
+    /* Increased top padding */
+    padding-top: var(--top-spacing);
+    position: relative;
+}
+
+.gov-header {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #283593 100%);
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    /* Added top margin */
+    margin-top: 2rem;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust sticky section headers to account for increased top spacing */
+.section-header {
+    background: var(--light-bg);
+    position: sticky;
+    top: calc(var(--navbar-height) + 50px); /* Increased distance from top */
+    z-index: 10;
+    padding: 1rem 0;
+}
+
+/* Responsive Design adjustments */
+@media (max-width: 1200px) {
+    :root {
+        --top-spacing: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --top-spacing: 200px;
+    }
+
+    .guidelines-container {
+        padding: 1rem;
+        padding-top: var(--top-spacing);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --top-spacing: 180px;
+    }
+}
+
+/* Safe area support for modern devices */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .guidelines-container {
+        padding-top: calc(var(--top-spacing) + env(safe-area-inset-top));
+    }
+}
+
+/* Additional spacing for first section */
+.guideline-section:first-of-type {
+    margin-top: 3rem;
+}
+
+/* Increased spacing between sections */
+.guideline-section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Rest of your existing CSS remains the same */

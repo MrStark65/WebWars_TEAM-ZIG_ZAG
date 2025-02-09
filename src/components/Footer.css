@@ -1,0 +1,339 @@
+/* Footer.css */
+:root {
+    --primary-color: #0a1435;
+    --secondary-color: #ff9933;
+    --text-light: #ffffff;
+    --text-gray: #e0e0e0;
+    --text-muted: #f6f0f0;
+    --bg-gradient: linear-gradient(135deg, #0a1435 0%, #132046 100%);
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  footer {
+      background: var(--bg-gradient);
+      color: var(--text-light);
+      position: relative;
+      overflow: hidden;
+  }
+  
+  /* Animated Background Effect */
+  footer::before {
+      content: '';
+      position: absolute;
+      top: 0;   
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary-color), #ff5722);
+      animation: gradientSlide 3s infinite linear;
+  }
+  
+  @keyframes gradientSlide {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+  }
+  
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 5vw, 2rem);
+  }
+  
+  /* Footer Top */
+  .footer-top {
+      background-color: rgba(19, 32, 70, 0.5);
+      padding: clamp(2rem, 5vw, 3rem) 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+  }
+  
+  .conference-info h3 {
+      color: var(--secondary-color);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .conference-desc {
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      margin-bottom: 1rem;
+      color: var(--text-gray);
+      line-height: 1.6;
+  }
+  
+  .conference-date {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--text-gray);
+      flex-wrap: wrap;
+  }
+  
+  .highlight {
+      color: var(--secondary-color);
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 2px;
+  }
+  
+  .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--secondary-color);
+      transform: scaleX(0);
+      transition: var(--transition-base);
+      transform-origin: right;
+  }
+  
+  .highlight:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+  }
+  
+  /* Footer Main */
+  .footer-main {
+      padding: clamp(3rem, 8vw, 4rem) 0;
+  }
+  
+  .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  .footer-col h4 {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+  }
+  
+  .footer-col h4::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--secondary-color), transparent);
+      transition: var(--transition-base);
+  }
+  
+  .footer-col:hover h4::after {
+      width: 100%;
+  }
+  
+  /* Contact List */
+  .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+  
+  .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 0.75rem;
+      border-radius: 8px;
+      transition: var(--transition-base);
+      background: rgba(240, 236, 236, 0.689);
+  }
+  
+  .contact-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(5px);
+  }
+  
+  .contact-item .icon {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      transition: var(--transition-base);
+  }
+  
+  .contact-item:hover .icon {
+      transform: scale(1.1);
+  }
+  
+  /* Footer Links */
+  .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .footer-links li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+  }
+  
+  .footer-links .arrow {
+      color: var(--secondary-color);
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      transition: var(--transition-base);
+  }
+  
+  .footer-links a {
+      color: var(--text-gray);
+      text-decoration: none;
+      transition: var(--transition-base);
+      position: relative;
+      padding-left: 0.5rem;
+  }
+  
+  .footer-links a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0;
+      height: 1px;
+      background: var(--secondary-color);
+      transition: var(--transition-base);
+  }
+  
+  .footer-links a:hover {
+      color: var(--secondary-color);
+      padding-left: 1rem;
+  }
+  
+  .footer-links a:hover::before {
+      width: 0.5rem;
+  }
+  
+  /* Social Links */
+  .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+  }
+  
+  .social-links a {
+      color: var(--text-light);
+      background: rgba(255, 255, 255, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-base);
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .social-links a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--secondary-color);
+      transform: translateY(100%);
+      transition: var(--transition-base);
+      z-index: 1;
+  }
+  
+  .social-links a:hover::before {
+      transform: translateY(0);
+  }
+  
+  .social-links a svg {
+      position: relative;
+      z-index: 2;
+  }
+  
+  .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+  }
+  
+  /* Conference Venue */
+  .conference-venue {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: var(--transition-base);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .conference-venue:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+      background-color: rgba(8, 17, 40, 0.8);
+      padding: 1.5rem 0;
+      text-align: center;
+      position: relative;
+  }
+  
+  .footer-bottom::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, 
+          transparent, 
+          rgba(199, 191, 191, 0.1), 
+          transparent
+      );
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .footer-content {
+          grid-template-columns: 1fr;
+      }
+  
+      .footer-col {
+          text-align: center;
+      }
+  
+      .footer-col h4::after {
+          left: 50%;
+          transform: translateX(-50%);
+      }
+  
+      .contact-item {
+          justify-content: center;
+      }
+  
+      .footer-links li {
+          justify-content: center;
+      }
+  
+      .social-links {
+          justify-content: center;
+      }
+  
+      .contact-item:hover {
+          transform: translateY(-5px);
+      }
+  }
+  
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+      }
+  }
