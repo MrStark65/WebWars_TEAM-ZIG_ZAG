@@ -1,3 +1,31 @@
+# Project Title
+
+Web_Wars Web development Challenge
+
+# Team Name & Members Details
+
+Team Name - ZIG_ZAG
+Team Lead - Lakshay Singh [22SCSE1430065]
+Team Member-1 Priya Singh [22SCSE1040617]
+
+# 🚀 Tech Stack Used
+
+Frontend:
+⚛ React.js – Component-based UI framework
+🎨 CSS – For styling
+⚡ JavaScript (ES6+) – Core logic
+🌍 React Router – For navigation
+🛠 Git & GitHub – Version control
+
+
+# 📥 **Installation & Setup Instructions**  
+
+# **1️⃣ Clone the Repository**  
+```sh
+git clone https://github.com/MrStark65/WebWars_TEAM-ZIG_ZAG.git
+cd WebWars_TEAM-ZIG_ZAG
+
+
 # Live Deploymment link
 
 https://iccsai-2025.netlify.app/
@@ -50,26 +78,3 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
